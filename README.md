@@ -1,98 +1,238 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2Jhd2VoemtqMTd0YXU1NmFveHp0aDJ0b3cxMWZsNXZvOXdzeGkybSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TId7jkAePkQ4Q5VpBk/giphy.gif" alt="Blog API GIF" width="300"/>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1 align="center">📝 Blog Pessoal API</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  <em>API backend com NestJS focada em autenticação, segurança e gerenciamento de conteúdo</em>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<p align="center">
+  <img alt="NestJS" src="https://img.shields.io/badge/NestJS-v10-E0234E?style=for-the-badge&logo=nestjs&logoColor=white"/>
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-v20-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-v5-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img alt="MySQL" src="https://img.shields.io/badge/MySQL-v8-4479A1?style=for-the-badge&logo=mysql&logoColor=white"/>
+  <img alt="JWT" src="https://img.shields.io/badge/JWT-Auth-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge"/>
+</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+---
 
-## Project setup
+## 📖 Sobre o Projeto
 
-```bash
-$ npm install
+API desenvolvida com **NestJS** para gerenciamento de um blog pessoal, com foco em **segurança e autenticação de usuários**.
+
+O sistema permite cadastro, login e gerenciamento de conteúdos como **postagens, temas e comentários**, seguindo boas práticas de arquitetura backend.
+
+---
+
+## 🔐 Segurança
+
+| Recurso | Descrição |
+|--------|--------|
+| 🔒 **Bcrypt** | Criptografia de senhas com hash seguro |
+| 🔑 **JWT** | Autenticação stateless por token |
+| 🛡️ **Guards** | Proteção de rotas autenticadas |
+| 🧠 **Passport** | Estratégias de autenticação Local e JWT |
+
+---
+
+## ✨ Funcionalidades
+
+| Recurso | Descrição |
+|---|---|
+| 👤 **Usuário** | Cadastro, atualização e busca |
+| 🔐 **Login** | Autenticação com retorno de JWT |
+| 📝 **Postagem** | CRUD completo |
+| 🏷️ **Tema** | CRUD completo |
+| 💬 **Comentário** | CRUD completo |
+| 🔗 **Relacionamentos** | Usuário ↔ Postagem ↔ Tema ↔ Comentário |
+
+---
+
+## 🏗️ Estrutura do Projeto
+
+```
+src/
+├── auth/
+│   ├── bcrypt/
+│   ├── constants/
+│   ├── controllers/
+│   ├── guard/
+│   ├── services/
+│   ├── strategy/
+│   └── auth.module.ts
+├── usuario/
+├── postagem/
+├── tema/
+├── comentario/
+└── app.module.ts
 ```
 
-## Compile and run the project
+---
 
-```bash
-# development
-$ npm run start
+## 🗂️ Diagrama ER
 
-# watch mode
-$ npm run start:dev
+```mermaid
+erDiagram
+    USUARIO {
+        int id PK
+        string nome
+        string usuario
+        string senha
+        string foto
+    }
+    POSTAGEM {
+        int id PK
+        string titulo
+        string texto
+        date data
+        int usuarioId FK
+        int temaId FK
+    }
+    TEMA {
+        int id PK
+        string descricao
+    }
+    COMENTARIO {
+        int id PK
+        string texto
+        int postagemId FK
+    }
 
-# production mode
-$ npm run start:prod
+    USUARIO ||--o{ POSTAGEM : cria
+    POSTAGEM }o--|| TEMA : pertence
+    POSTAGEM ||--o{ COMENTARIO : possui
 ```
 
-## Run tests
+---
+
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+- Node.js v20+
+- MySQL v8+
+- npm
+
+### Instalação
 
 ```bash
-# unit tests
-$ npm run test
+# Clone o repositório
+git clone https://github.com/seu-usuario/blogpessoal.git
 
-# e2e tests
-$ npm run test:e2e
+# Acesse a pasta do projeto
+cd blogpessoal
 
-# test coverage
-$ npm run test:cov
+# Instale as dependências
+npm install
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### Rodando a aplicação
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# Desenvolvimento (com hot reload)
+npm run start:dev
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+> A API estará disponível em `http://localhost:4001`
 
-## Resources
+---
 
-Check out a few resources that may come in handy when working with NestJS:
+## 🔗 Endpoints da API
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### 👤 Usuário
 
-## Support
+| Método | Rota | Auth | Descrição |
+|--------|------|------|-----------|
+| `POST` | `/usuarios/cadastrar` | ❌ | Criar usuário |
+| `POST` | `/usuarios/logar` | ❌ | Login |
+| `GET` | `/usuarios` | ✅ | Listar usuários |
+| `GET` | `/usuarios/:id` | ✅ | Buscar por ID |
+| `PUT` | `/usuarios` | ✅ | Atualizar usuário |
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### 📝 Postagem
 
-## Stay in touch
+| Método | Rota | Auth | Descrição |
+|--------|------|------|-----------|
+| `GET` | `/postagens` | ✅ | Listar postagens |
+| `POST` | `/postagens` | ✅ | Criar postagem |
+| `PUT` | `/postagens` | ✅ | Atualizar postagem |
+| `DELETE` | `/postagens/:id` | ✅ | Deletar postagem |
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### 🏷️ Tema
 
-## License
+| Método | Rota | Auth | Descrição |
+|--------|------|------|-----------|
+| `GET` | `/temas` | ✅ | Listar temas |
+| `POST` | `/temas` | ✅ | Criar tema |
+| `PUT` | `/temas` | ✅ | Atualizar tema |
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+---
+
+## 🔐 Autenticação
+
+### Login
+
+```http
+POST /usuarios/logar
+```
+
+**Body:**
+```json
+{
+  "usuario": "root@root.com",
+  "senha": "123456"
+}
+```
+
+**Resposta:**
+```json
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+**Uso nas rotas protegidas:**
+```
+Authorization: Bearer TOKEN_JWT
+```
+
+> ⚠️ Todas as rotas marcadas com ✅ exigem o token no header da requisição.
+
+---
+
+## 🧪 Testando com Insomnia
+
+1. Crie uma nova **Workspace** chamada `Blog Pessoal API`
+2. Adicione as requests com os métodos e URLs acima
+3. Para `POST` e `PUT`, configure o body como **JSON**
+4. Faça login em `/usuarios/logar` e copie o `access_token`
+5. Nas rotas protegidas, adicione o header:
+   ```
+   Authorization: Bearer SEU_TOKEN_AQUI
+   ```
+
+---
+
+## 🎯 Aprendizados
+
+- ✅ Autenticação segura com **JWT**
+- ✅ Criptografia de senhas com **Bcrypt**
+- ✅ Arquitetura modular com **NestJS**
+- ✅ Relacionamentos entre entidades com **TypeORM**
+- ✅ Proteção de rotas com **Guards e Passport**
+
+---
+
+## 👩‍💻 Autora
+
+**Lohanna B**  
+Feito com 💜 e muito ☕
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.

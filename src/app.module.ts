@@ -6,6 +6,9 @@ import { Tema } from './tema/entities/tema.entity';
 import { TemaModule } from './tema/tema.module';
 import { Comentario } from './comentario/entities/comentario.entity';
 import { ComentarioModule } from './comentario/comentario.module';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { UsuarioModule } from './usuario/usuario.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -16,12 +19,14 @@ import { ComentarioModule } from './comentario/comentario.module';
       username: 'root',
       password: 'root',
       database: 'db_blogpessoal',
-      entities: [Postagem, Tema, Comentario], 
+      entities: [Postagem, Tema, Comentario, Usuario ], 
       synchronize: true,
     }),
     PostagemModule,
     TemaModule,
-    ComentarioModule 
+    ComentarioModule,
+    AuthModule,
+    UsuarioModule
   ],
   controllers: [],
   providers: [],

@@ -1,7 +1,9 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put } from '@nestjs/common'
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, UseGuards } from '@nestjs/common'
 import { Comentario } from '../entities/comentario.entity'
 import { ComentarioService } from '../services/comentario.service'
+import { JwtAuthGuard } from '../../auth/guard/jwt-auth.guard'
 
+@UseGuards(JwtAuthGuard)
 @Controller('/comentarios')
 export class ComentarioController {
 
