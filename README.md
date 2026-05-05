@@ -230,9 +230,3 @@ Authorization: Bearer TOKEN_JWT
 
 **Lohanna B**  
 Feito com 💜 e muito ☕
-
----
-
-## 📄 Licença
-
-Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
